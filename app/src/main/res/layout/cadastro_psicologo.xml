@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fef7ff"
+    tools:context=".ui.auth.psicologo.CadastroPsicologo">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="64dp"
+        android:src="@drawable/logo_venus"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    
+    <EditText
+        android:id="@+id/editTextName"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="32dp"
+        android:hint="Nome:"
+        android:textColor="#6B6670"
+        android:textColorHint="#cac4d0"
+        android:background="@drawable/rounded_edittext"
+        android:padding="16dp"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/logo"/>
+
+    <EditText
+        android:id="@+id/editTextSobrenome"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        tools:ignore="MissingConstraints"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="32dp"
+        android:hint="Sobrenome:"
+        android:textColor="#6B6670"
+        android:textColorHint="#cac4d0"
+        android:background="@drawable/rounded_edittext"
+        android:padding="16dp"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editTextName"/>
+
+    <EditText
+        android:id="@+id/editTextEmail"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        tools:ignore="MissingConstraints"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="32dp"
+        android:hint="Email:"
+        android:textColor="#6B6670"
+        android:textColorHint="#cac4d0"
+        android:background="@drawable/rounded_edittext"
+        android:padding="16dp"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editTextSobrenome"/>
+
+    <EditText
+        android:id="@+id/editTextCrp"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        tools:ignore="MissingConstraints"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="32dp"
+        android:hint="CRP:"
+        android:textColor="#6B6670"
+        android:textColorHint="#cac4d0"
+        android:background="@drawable/rounded_edittext"
+        android:padding="16dp"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editTextEmail"/>
+
+    <EditText
+        android:id="@+id/editTextSenha"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        tools:ignore="MissingConstraints"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="32dp"
+        android:hint="Senha:"
+        android:textColor="#6B6670"
+        android:textColorHint="#cac4d0"
+        android:background="@drawable/rounded_edittext"
+        android:padding="16dp"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editTextCrp"/>
+
+<!--    <EditText-->
+<!--        android:id="@+id/editTextSenha2"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="56dp"-->
+<!--        tools:ignore="MissingConstraints"-->
+<!--        android:layout_marginStart="32dp"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:layout_marginEnd="32dp"-->
+<!--        android:hint="Confirme sua senha:"-->
+<!--        android:textColor="#6B6670"-->
+<!--        android:textColorHint="#cac4d0"-->
+<!--        android:background="@drawable/rounded_edittext"-->
+<!--        android:padding="16dp"-->
+<!--        android:inputType="textPersonName"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/editTextSenha"/>-->
+
+    <Button
+        android:id="@+id/buttonRegister"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/rounded_button"
+        android:textSize="18sp"
+        android:text="Cadastrar-se"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextSenha" />
+
+<!--    <TextView-->
+<!--        android:id="@+id/textAviso"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="32dp"-->
+<!--        android:layout_marginTop="16dp"-->
+<!--        android:layout_marginEnd="32dp"-->
+<!--        android:textSize="18sp"-->
+<!--        android:text="*A senha deve conter no máximo 10 caracters"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/editTextSenha"/>-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

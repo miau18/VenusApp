@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fef7ff"
+    tools:context=".ui.auth.usuaria.CadastroUsuaria">
+
+    <!-- Logo -->
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="64dp"
+        android:src="@drawable/logo_venus"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <FrameLayout
+        android:id="@+id/fieldsContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toBottomOf="@id/logo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:id="@+id/layoutNormal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/editTextName2"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:hint="Nome:"
+                android:background="@drawable/rounded_edittext"
+                android:padding="16dp"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/editTextSobrenome2"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="12dp"
+                android:hint="Sobrenome:"
+                android:background="@drawable/rounded_edittext"
+                android:padding="16dp"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/editTextEmail2"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="12dp"
+                android:hint="Email:"
+                android:background="@drawable/rounded_edittext"
+                android:padding="16dp"
+                android:inputType="textEmailAddress" />
+
+            <EditText
+                android:id="@+id/editTextSenha2"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="12dp"
+                android:hint="Senha:"
+                android:background="@drawable/rounded_edittext"
+                android:padding="16dp"
+                android:inputType="textPassword" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layoutAnonimo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <EditText
+                android:id="@+id/editTextCodinome"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:hint="Codinome:"
+                android:background="@drawable/rounded_edittext"
+                android:padding="16dp"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/editTextSenhaAnonima"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="12dp"
+                android:hint="Senha:"
+                android:background="@drawable/rounded_edittext"
+                android:padding="16dp"
+                android:inputType="textPassword" />
+        </LinearLayout>
+
+    </FrameLayout>
+
+    <CheckBox
+        android:id="@+id/checkAnonimo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Cadastrar como anônima"
+        android:textColor="#6B6670"
+        app:layout_constraintTop_toBottomOf="@id/fieldsContainer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/btnCadastro"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="150dp"
+        android:background="@drawable/rounded_button"
+        android:textSize="18sp"
+        android:text="Cadastrar-se"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

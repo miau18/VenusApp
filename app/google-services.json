@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "109100457399",
+    "project_id": "venus-a9494",
+    "storage_bucket": "venus-a9494.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:109100457399:android:555369164fbc34daad1c32",
+        "android_client_info": {
+          "package_name": "com.example.vnus"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAsZ-WedJ_uBIbLdiu9KlsFOq-8kOS7euw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
