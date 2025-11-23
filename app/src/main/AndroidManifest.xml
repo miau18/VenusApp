@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:name=".MyApp"
         android:allowBackup="true"
@@ -12,30 +15,36 @@
         android:roundIcon="@drawable/logo_venus"
         android:supportsRtl="true"
         android:theme="@style/Theme.Vênus">
-        <activity
-            android:name=".ui.auth.relato.CriacaoRelatos"
-            android:exported="true" />
-        <activity
-            android:name=".ui.auth.relato.TelaDeRelatos"
-            android:exported="true" />
-        <activity
-            android:name=".ui.auth.psicologo.CadastroPsicologo"
-            android:exported="true" />
-        <activity
-            android:name=".ui.auth.usuaria.CadastroUsuaria"
-            android:exported="true" />
-        <activity
-            android:name=".ui.auth.home.TelaInicial"
-            android:exported="true" />
-        <activity
-            android:name=".ui.auth.home.SegundaTelaPsicologo"
-            android:exported="true" />
-        <activity
-            android:name=".ui.auth.home.SegundaTelaUsuaria"
-            android:exported="true" />
-        <activity
-            android:name=".ui.auth.usuaria.LoginUsuaria"
-            android:exported="true" />
+
+        <activity android:name=".ui.auth.usuaria.PerfilUsuaria" android:exported="true" />
+        <activity android:name=".ui.auth.relato.CriacaoRelatos" android:exported="true" />
+        <activity android:name=".ui.auth.relato.TelaDeRelatos" android:exported="true" />
+        <activity android:name=".ui.auth.psicologo.CadastroPsicologo" android:exported="true" />
+        <activity android:name=".ui.auth.usuaria.CadastroUsuaria" android:exported="true" />
+
+        <activity android:name=".ui.auth.home.TelaInicial" android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".ui.auth.home.SegundaTelaPsicologo" android:exported="true" />
+        <activity android:name=".ui.auth.home.SegundaTelaUsuaria" android:exported="true" />
+        <activity android:name=".ui.auth.usuaria.LoginUsuaria" android:exported="true" />
+        <activity android:name=".ui.auth.comentario.Comentarios" android:exported="true" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:name=".ui.auth.psicologo.LoginPsicologo" android:exported="true" />
+        <activity android:name=".ui.auth.usuaria.EditarContaUsuaria" android:exported="true" />
+        <activity android:name=".ui.auth.informacoes.TelaInformacoes" android:exported="true" />
+        <activity android:name=".ui.auth.informacoes.TelaPostagem" android:exported="true" />
+        <activity android:name=".ui.auth.chat.TelaChat" android:exported="true" />
+        <activity android:name=".ui.auth.usuaria.PerfilAcessadoRelato" android:exported="true" />
+        <activity android:name=".ui.auth.pesquisa.TelaPesquisa" android:exported="true" />
+        <activity android:name=".ui.auth.chat.Chat" android:exported="true" />
+        <activity android:name=".ui.auth.chat.RedeDeApoio" android:exported="true" />
+        <activity android:name=".ui.auth.relato.TelaDeRelatosPsicologo" android:exported="true" />
+        <activity android:name=".ui.auth.psicologo.PerfilPsicologo" android:exported="true" />
+        <activity android:name=".ui.auth.psicologo.EditarContaPsicologo" android:exported="true" />
     </application>
 
 </manifest>

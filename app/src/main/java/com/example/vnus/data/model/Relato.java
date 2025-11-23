@@ -13,10 +13,10 @@ public class Relato {
 
     //Relações
     private Usuaria usuaria;
-    private List<Users> compartilhadoPor;
     private List<Users> curtidoPor;
     private List<Comentario> comentarios;
     private Hospital hospital;
+    private String idUsuaria;
 
     public Relato(){
     }
@@ -36,19 +36,18 @@ public class Relato {
     public void setConteudo(String conteudo) { this.conteudo=conteudo; }
     public boolean getAnonimo() { return anonimo; }
     public void setAnonimo(boolean anonimo) { this.anonimo = anonimo; }
-
     public Date getDataPublicacao() { return dataPublicacao; }
     public void setDataPublicacao(Date dataPublicacao) {
         this.dataPublicacao = dataPublicacao;
     }
     public int getCurtidas() { return curtidas; }
     public void setCurtidas(int curtidas) { this.curtidas=curtidas; }
-
     public Usuaria getUsuaria() {return usuaria;}
-
     public void setUsuaria(Usuaria usuaria) {this.usuaria=usuaria;}
-
     public List<Users> getCurtidoPor() {return curtidoPor;}
-
     public void setCurtidoPor(List<Users> curtidoPor) {this.curtidoPor=curtidoPor;}
+    public String getIdUsuaria() {return idUsuaria;}
+    public void setIdUsuaria(String idUsuaria) {this.idUsuaria = idUsuaria;}
+    public Hospital getHospital() { return hospital; }
+    public void setHospital(Hospital hospital) { this.hospital = hospital; }
 }

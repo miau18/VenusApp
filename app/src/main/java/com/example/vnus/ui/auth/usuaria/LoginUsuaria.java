@@ -1,6 +1,7 @@
 package com.example.vnus.ui.auth.usuaria;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -14,6 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.vnus.R;
 import com.example.vnus.ui.auth.relato.TelaDeRelatos;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 public class LoginUsuaria extends AppCompatActivity {
@@ -24,7 +26,6 @@ public class LoginUsuaria extends AppCompatActivity {
     private Button btnLogin;
     private CheckBox checkAnonimo;
     private LinearLayout layoutNormal, layoutAnonimo;
-
     private FirebaseFirestore db;
 
     @Override
@@ -35,36 +36,23 @@ public class LoginUsuaria extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
 
-        // Normal
         email = findViewById(R.id.editTextEmail3);
         senha = findViewById(R.id.editTextSenha3);
-
-        // Anônimo
         codinome = findViewById(R.id.editTextCodinomeLogin);
         senhaAnonima = findViewById(R.id.editTextSenhaAnonimaLogin);
-
         btnLogin = findViewById(R.id.btnLogin);
         checkAnonimo = findViewById(R.id.checkAnonimo);
         layoutNormal = findViewById(R.id.layoutNormalLogin);
         layoutAnonimo = findViewById(R.id.layoutAnonimoLogin);
 
-        // Alterna os layouts
         checkAnonimo.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            if (isChecked) {
-                layoutNormal.setVisibility(View.GONE);
-                layoutAnonimo.setVisibility(View.VISIBLE);
-            } else {
-                layoutNormal.setVisibility(View.VISIBLE);
-                layoutAnonimo.setVisibility(View.GONE);
-            }
+            layoutNormal.setVisibility(isChecked ? View.GONE : View.VISIBLE);
+            layoutAnonimo.setVisibility(isChecked ? View.VISIBLE : View.GONE);
         });
 
         btnLogin.setOnClickListener(v -> {
-            if (checkAnonimo.isChecked()) {
-                loginAnonimo();
-            } else {
-                loginNormal();
-            }
+            if (checkAnonimo.isChecked()) loginAnonimo();
+            else loginNormal();
         });
     }
 
@@ -80,9 +68,15 @@ public class LoginUsuaria extends AppCompatActivity {
         auth.signInWithEmailAndPassword(email2, senha2)
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
-                        Toast.makeText(this, "Login realizado com sucesso!", Toast.LENGTH_SHORT).show();
-                         startActivity(new Intent(this, TelaDeRelatos.class));
-                         finish();
+                        SharedPreferences prefs = getSharedPreferences("DadosUsuario", MODE_PRIVATE);
+                        SharedPreferences.Editor editor = prefs.edit();
+                        editor.clear();
+                        editor.putString("tipo_usuario", "usuaria");
+                        editor.apply();
+
+                        Toast.makeText(this, "Login realizado!", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(this, TelaDeRelatos.class));
+                        finish();
                     } else {
                         Toast.makeText(this, "Erro: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                     }
@@ -99,20 +93,36 @@ public class LoginUsuaria extends AppCompatActivity {
         }
 
         db.collection("usuaria")
-                .whereEqualTo("nome", cod) // ou "codinome" dependendo do atributo salvo
-                .whereEqualTo("senha", senhaA)
+                .whereEqualTo("codinome", cod)
+                .whereEqualTo("senhaAnonima", senhaA)
+                .whereEqualTo("anonima", true)
                 .get()
                 .addOnSuccessListener(querySnapshot -> {
                     if (!querySnapshot.isEmpty()) {
-                        Toast.makeText(this, "Login anônimo realizado com sucesso!", Toast.LENGTH_SHORT).show();
-                         startActivity(new Intent(this, TelaDeRelatos.class));
-                         finish();
+                        DocumentSnapshot doc = querySnapshot.getDocuments().get(0);
+                        String idRealNoBanco = doc.getId();
+
+                        auth.signInAnonymously()
+                                .addOnSuccessListener(authResult -> {
+                                    SharedPreferences prefs = getSharedPreferences("DadosUsuario", MODE_PRIVATE);
+                                    SharedPreferences.Editor editor = prefs.edit();
+                                    editor.clear();
+                                    editor.putString("codinome_real", cod);
+                                    editor.putString("id_banco_real", idRealNoBanco);
+                                    editor.putString("tipo_usuario", "usuaria");
+                                    editor.apply();
+
+                                    Toast.makeText(this, "Login anônimo realizado!", Toast.LENGTH_SHORT).show();
+                                    startActivity(new Intent(this, TelaDeRelatos.class));
+                                    finish();
+                                })
+                                .addOnFailureListener(e -> Toast.makeText(this, "Erro Auth", Toast.LENGTH_SHORT).show());
                     } else {
                         Toast.makeText(this, "Codinome ou senha incorretos.", Toast.LENGTH_SHORT).show();
                     }
                 })
                 .addOnFailureListener(e ->
-                        Toast.makeText(this, "Erro: " + e.getMessage(), Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, "Erro Rede: " + e.getMessage(), Toast.LENGTH_SHORT).show()
                 );
     }
 }

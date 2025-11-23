@@ -33,7 +33,8 @@
         android:id="@+id/adicionarRelato"
         android:layout_width="56dp"
         android:layout_height="56dp"
-        android:layout_margin="16dp"
+        android:layout_marginBottom="32dp"
+        android:layout_marginEnd="32dp"
         android:background="@drawable/rounded_button"
         android:padding="12dp"
         android:src="@drawable/adicao"
@@ -47,6 +48,6 @@
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

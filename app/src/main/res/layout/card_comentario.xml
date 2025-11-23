@@ -1,0 +1,32 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="8dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/txtNomeComentario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:text="Usuária"/>
+
+    <TextView
+        android:id="@+id/txtConteudoComentario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="17sp"
+        android:textColor="#6b6670"
+        android:text="Comentário..."/>
+
+    <TextView
+        android:id="@+id/txtDataComentario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="01/01/2025 12:00"
+        android:textSize="12sp"
+        android:textColor="#6b6670"
+        android:layout_marginTop="2dp"/>
+</LinearLayout>

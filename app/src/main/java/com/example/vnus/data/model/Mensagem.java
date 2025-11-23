@@ -1,39 +1,39 @@
 package com.example.vnus.data.model;
 
-import com.google.type.DateTime;
+import java.util.Date;
 
 public class Mensagem {
 
-    private int id;
+    private String id;
     private String conteudo;
-    private DateTime horaEnvio;
-    private DateTime dataAtualização;
+    private Date horaEnvio;
+    private Date dataAtualizacao;
 
-    //Relações
+    // Relações
     private Users remetente;
     private Users destinatario;
-    private Chat chat;
 
     public Mensagem(){
     }
 
-    public Mensagem(int id, String conteudo, DateTime horaEnvio, DateTime dataAtualização){
+    public Mensagem(String id, String conteudo, Date horaEnvio, Date dataAtualizacao){
         super();
         this.id = id;
         this.conteudo = conteudo;
-        this.dataAtualização = dataAtualização;
+        this.dataAtualizacao = dataAtualizacao;
         this.horaEnvio = horaEnvio;
     }
 
-    public int getId() { return id; }
-    public void setId(int id) { this.id=id; }
-
+    public String getId() { return id; }
+    public void setId(String id) { this.id=id; }
     public String getConteudo() { return conteudo; }
     public void setConteudo(String conteudo) { this.conteudo=conteudo; }
-
-    public DateTime getHoraEnvio() { return horaEnvio; }
-    public void setHoraEnvio(DateTime horaEnvio) { this.horaEnvio=horaEnvio; }
-
-    public DateTime getDataAtualização() { return dataAtualização; }
-    public void setDataAtualização(DateTime dataAtualização) { this.dataAtualização=dataAtualização; }
+    public Date getHoraEnvio() { return horaEnvio; }
+    public void setHoraEnvio(Date horaEnvio) { this.horaEnvio=horaEnvio; }
+    public Date getDataAtualizacao() { return dataAtualizacao; }
+    public void setDataAtualizacao(Date dataAtualizacao) { this.dataAtualizacao=dataAtualizacao; }
+    public Users getRemetente() { return remetente; }
+    public void setRemetente(Users remetente) { this.remetente = remetente; }
+    public Users getDestinatario() { return destinatario; }
+    public void setDestinatario(Users destinatario) { this.destinatario = destinatario; }
 }

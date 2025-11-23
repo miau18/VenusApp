@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="8dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="4dp"
+    app:cardBackgroundColor="#ece6f0">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/txtNomeUsuaria"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Nome/Apelido Usuária"
+                android:textStyle="bold"
+                android:textSize="25sp"
+                android:textColor="#6b6670" />
+
+            <ImageView
+                android:id="@+id/menuOpcoes"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/dots"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/txtNomeUsuaria"
+                app:layout_constraintBottom_toBottomOf="@id/txtNomeUsuaria"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/txtHospital"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hospital Santa Maria"
+            android:textSize="15sp"
+            android:textStyle="italic"
+            android:textColor="#7b6d8d"
+            android:layout_marginTop="4dp"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/txtRelato"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit..."
+            android:textSize="20sp"
+            android:layout_marginTop="6dp"
+            android:lineSpacingExtra="2dp"
+            android:textColor="#6b6670" />
+
+        <TextView
+            android:id="@+id/txtData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="01/01/2025 12:00"
+            android:textSize="15sp"
+            android:textColor="#6b6670"
+            android:layout_marginTop="4dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="16dp"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/iconPerfil"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/user"
+                android:contentDescription="Perfil"
+                android:layout_marginEnd="16dp" />
+
+            <ImageView
+                android:id="@+id/iconLike"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/like"
+                android:contentDescription="Curtir"
+                android:layout_marginEnd="4dp" />
+
+            <TextView
+                android:id="@+id/txtCurtidas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="12sp"
+                android:textColor="#6b6670"
+                android:layout_marginEnd="16dp" />
+
+            <ImageView
+                android:id="@+id/iconMensagem"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginEnd="10dp"
+                android:contentDescription="Comentar"
+                android:src="@drawable/mensagem" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

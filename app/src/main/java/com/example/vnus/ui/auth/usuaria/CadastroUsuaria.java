@@ -25,11 +25,14 @@ import com.google.firebase.firestore.FirebaseFirestore;
 public class CadastroUsuaria extends AppCompatActivity {
 
     private static final String TAG = "CadastroUsuaria";
-
     private FirebaseAuth auth;
     private UsersRepository ur;
     private UsuariaRepository usuariaR;
     private FirebaseFirestore db;
+    private EditText nomeEditText, sobrenomeEditText, emailEditText, codinomeEditText, senhaAnonimaEditText, senhaEditText;
+    private Button btnCadastro;
+    private CheckBox checkAnonimo;
+    private LinearLayout layoutNormal, layoutAnonimo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,16 +44,16 @@ public class CadastroUsuaria extends AppCompatActivity {
         ur = new UsersRepository();
         usuariaR = new UsuariaRepository();
 
-        EditText nomeEditText = findViewById(R.id.editTextName2);
-        EditText sobrenomeEditText = findViewById(R.id.editTextSobrenome2);
-        EditText emailEditText = findViewById(R.id.editTextEmail2);
-        EditText senhaEditText = findViewById(R.id.editTextSenha2);
-        Button btnCadastro = findViewById(R.id.btnCadastro);
-        CheckBox checkAnonimo = findViewById(R.id.checkAnonimo);
-        EditText codinomeEditText = findViewById(R.id.editTextCodinome);
-        EditText senhaAnonimaEditText = findViewById(R.id.editTextSenhaAnonima);
-        LinearLayout layoutNormal = findViewById(R.id.layoutNormal);
-        LinearLayout layoutAnonimo = findViewById(R.id.layoutAnonimo);
+        nomeEditText = findViewById(R.id.editTextName2);
+        sobrenomeEditText = findViewById(R.id.editTextSobrenome2);
+        emailEditText = findViewById(R.id.editTextEmail2);
+        senhaEditText = findViewById(R.id.editTextSenha2);
+        btnCadastro = findViewById(R.id.btnCadastro);
+        checkAnonimo = findViewById(R.id.checkAnonimo);
+        codinomeEditText = findViewById(R.id.editTextCodinome);
+        senhaAnonimaEditText = findViewById(R.id.editTextSenhaAnonima);
+        layoutNormal = findViewById(R.id.layoutNormal);
+        layoutAnonimo = findViewById(R.id.layoutAnonimo);
 
         if (checkAnonimo.isChecked()) {
             layoutNormal.setVisibility(View.GONE);
@@ -60,22 +63,20 @@ public class CadastroUsuaria extends AppCompatActivity {
             layoutAnonimo.setVisibility(View.GONE);
         }
 
-        checkAnonimo.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                Log.d(TAG, "checkAnonimo changed: " + isChecked);
-                if (isChecked) {
-                    layoutNormal.setVisibility(View.GONE);
-                    layoutAnonimo.setVisibility(View.VISIBLE);
-                } else {
-                    layoutNormal.setVisibility(View.VISIBLE);
-                    layoutAnonimo.setVisibility(View.GONE);
-                }
+        checkAnonimo.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            Log.d(TAG, "checkAnonimo changed: " + isChecked);
+            if (isChecked) {
+                layoutNormal.setVisibility(View.GONE);
+                layoutAnonimo.setVisibility(View.VISIBLE);
+            } else {
+                layoutNormal.setVisibility(View.VISIBLE);
+                layoutAnonimo.setVisibility(View.GONE);
             }
         });
 
         btnCadastro.setOnClickListener(view -> {
             if (checkAnonimo.isChecked()) {
+                // --- CADASTRO ANÔNIMO ---
                 String codinome = codinomeEditText.getText().toString().trim();
                 String senhaAnonimo = senhaAnonimaEditText.getText().toString().trim();
 
@@ -85,17 +86,24 @@ public class CadastroUsuaria extends AppCompatActivity {
                 }
 
                 String userId = db.collection("usuaria").document().getId();
+
+                Users userAnonimo = new Users(userId, codinome, "", "", "usuaria");
+
                 Usuaria usuariaAnonima = new Usuaria(userId, codinome, senhaAnonimo);
 
-                usuariaR.saveUsuariaSpecifiData(usuariaAnonima,
+                ur.saveUser(userAnonimo,
                         aVoid -> {
-                            Toast.makeText(this, "Usuária anônima registrada com sucesso!", Toast.LENGTH_SHORT).show();
-                            // opcional: redirecionar para LoginUsuaria
-                            Intent intent = new Intent(CadastroUsuaria.this, LoginUsuaria.class);
-                            startActivity(intent);
-                            finish();
+                            usuariaR.saveUsuariaSpecifiData(usuariaAnonima,
+                                    aVoid1 -> {
+                                        Toast.makeText(this, "Usuária anônima registrada com sucesso!", Toast.LENGTH_SHORT).show();
+                                        Intent intent = new Intent(CadastroUsuaria.this, LoginUsuaria.class);
+                                        startActivity(intent);
+                                        finish();
+                                    },
+                                    e -> Toast.makeText(this, "Erro ao salvar dados específicos: " + e.getMessage(), Toast.LENGTH_SHORT).show()
+                            );
                         },
-                        e -> Toast.makeText(this, "Erro: " + e.getMessage(), Toast.LENGTH_SHORT).show()
+                        e -> Toast.makeText(this, "Erro ao criar usuário base: " + e.getMessage(), Toast.LENGTH_SHORT).show()
                 );
 
             } else {

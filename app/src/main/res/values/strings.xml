@@ -1,3 +1,62 @@
 <resources>
     <string name="app_name">Vênus</string>
+
+    <string name="tema_episiotomia_titulo">Episiotomia</string>
+    <string name="descricao_tema_episiotomia">
+    A episiotomia, ou "pique", é uma cirurgia realizada na vulva, cortando a entrada da vagina com uma tesoura ou bisturi, algumas vezes sem anestesia. Afeta diversas estruturas do períneo, como músculos, vasos sanguíneos e tendões, que são responsáveis pela sustentação de alguns órgãos, pela continência urinária e fecal e ainda têm ligações importantes com o clitóris. No Brasil, a episiotomia é a única cirurgia realizada sem o consentimento da paciente e sem que ela seja informada sobre sua necessidade (indicações), seus riscos, seus possíveis benefícios e efeitos adversos. Tampouco se informa à mulher sobre as possibilidades alternativas de tratamento.
+    Desse modo, a prática de episiotomia no país contraria os preceitos da Medicina Baseada em Evidências.
+    Quando a mulher dá à luz por via vaginal, pode permanecer com o períneo íntegro. Isto é, se o parto for fisiológico, se o ritmo natural da mulher for respeitado e se ela não receber drogas, na
+        maioria das vezes ela terá, após o parto, o períneo íntegro, sem qualquer tipo de lesão.
+    Quando a episiotomia ocorre, pode ser classificada em quatro graus:
+    primeiro grau: compreende lesões superficiais, que atingem pele e tecido subcutâneo do períneo ou o epitélio vaginal. Também são consideradas de primeiro grau as lacerações superficiais múltiplas nessas regiões;
+    segundo grau: lesões mais profundas que as de primeiro grau, que atingem músculos superficiais do períneo e o corpo perineal;
+    terceiro grau: as lesões de terceiro grau mostram-se mais severas, por envolverem músculos perineais e esfíncteres anais,e subdividem-se em:
+    3a: menos de 50% do esfíncter anal externo afetado;
+    3b: mais de 50% do esfíncter anal externo afetado;
+    3c: inclui lesões no esfíncter anal interno;
+    quarto grau: além de atingir os tecidos que compreendem o trauma de terceiro grau, o de quarto grau inclui o rompimento do esfíncter anal (externo ou interno ou ambos) e do epitélio anorretal.
+    Outra alegação para realização da episiotomia consiste na prevenção de incontinência urinária e fecal, fato não comprovado cientificamente. Não há, até o momento, estudos de longo prazo que verifiquem a ocorrência de
+    incontinência em idades mais avançadas da mulher, relacionando-a à realização ou não da episiotomia. Porém, estudos que compreendem horizontes mais curtos apontam que a episiotomia
+        tem justamente o efeito contrário, de provocar ou agravar incontinência urinária, fecal e de flatos.
+    Outras complicações comuns da episiotomia são: dor, infecção, deiscência, maior volume de sangramento, dor nas relações sexuais, maior risco de laceração perineal em partos
+    subsequentes, resultados anatômicos e estéticos insatisfatórios, prolongamento da incisão e hematomas.
+    O procedimento de apisiotomia deve semepre ser questionado e, se for da vontade da parturiente, pode sim ser negado por ela.</string>
+
+    <string name="tema_manobra_tirulo">Manobra de Kristeller</string>
+    <string name="descricao_tema_manobra">
+        Essa manobra é realizada om as duas mãos empurrando a barriga da mulher em direção à pelve. tualmente, dispomos de diversos estudos que demonstram as graves complicações da prática desse procedimento e apesar disso a
+        manobra é frequentemente realizada com uma pessoa subindo em cima da barriga da mulher, ou expremendo seu ventre com o peso do corpo sobre as mãos, o braço, antebraço ou joelho.
+        Não existem evidências de que esta manobra seja benéfica a parturiente ou que deveria ser feita. O bebê nasce sozinho qunado a grávida tem passagem, emburrado por ela e pela força da gravidade, não necessita de nenhuma interferência.
+    </string>
+
+    <string name="tema_parto_titulo">Escolha da posição do parto</string>
+    <string name="descricao_tema_restricoes">
+        Apesar da recomendação da Organização Mundial de Saúde, da recomendação do Ministério da Saúde, da Portaria 1.067 de 2005, RDC 36 de 2008 da ANVISA, muitas mulheres ainda são
+        obrigadas a ficar em posição de litotomia ou supina (deitas de barriga para cima na maca) para o parto. A mulher tem o direito de decidir qual a posição ela quer seguir na hora do seu parto.
+        A posição para o parto sempre deve ser a que a parturiente se sinta confotável para parir. Posições verticalizadas, por exemplo, favorecem a descida do bebê, por contarem com a ajuda da
+        gravidade. Assim, seria mais racional, mais ético e mais respeitoso permitir que a mulher posicione-se de modo mais confortável para ela, em vez de realizar procedimentos
+        comprovadamente prejudiciais à saúde da mulher e da criança.
+    </string>
+
+    <string name="tema_acompanhante_titulo">Lei do Acompanhante</string>
+    <string name="descricao_tema_acompanhante">
+        A Lei n° 11.108/2005, chamda Lei do Acompanhante, garante a parturiente o direito de ao menos um acompanhante na hora do parto, seja normal ou cesária.
+        Os enefícios proporcionados apenas pela presença de um acompanhante são: iminuição do tempo de trabalho de parto, sentimento de confiança, controle e comunicação, menor necessidade de medicação ou
+        analgesia, menor necessidade de parto operatório ou instrumental, menores taxas de dor, pânico e exaustão, menores escores de Apgar abaixo de 7, aumento dos índices de amamentação, melhor formação de vínculos mãe-bebê, maior satisfação da mulher, menos relatos de cansaço
+        durante e após o parto. Caso o nascimento seja por uma cesárea, os benefícios da presença do acompanhante incluem: diminuição do sentimento de ansiedade, diminuição do sentimento de
+        solidão, diminuição do sentimento de preocupação com o estado de saúde do bebê, maior sentimento de prazer, auxílio na primeira mamada, maior duração do aleitamento materno.
+        Não existe uma "pena" criminal para o descumprimento desta lei, mas sim sanções de natureza administrativa, cível e, em alguns casos, penalidades previstas no Código de Defesa do Consumidor e como infração sanitária.
+        A denúncia pode ser feita na Ouvidoria do SUS (para serviços públicos) e o Ministério Púlico, além de outros orgãos, como Conselho de Classse e Agência Nacional de Saúde (em casos de serviços particulares).
+    </string>
+
+    <string name="tema_denuncia_titulo">Denúnciar violência obstétrica</string>
+    <string name="descricao_tema_denuncia">
+        Nçao existe lei que torne a violência obstétrica um crime, mas existem alguns jeitos de reclamar as violências cometidas contra a parturiente durante o proceso de parto:
+        180(Canal de atendimento a mulher);
+        136(Ouvidoria do SUS);
+        100(Direitos humanos).
+        Além das ouvidorias, podem ser feitas reclamações na própria ouvidoria do hospital ou no conselho de classe, caso a violência tenha sido cometida por um médico ou enfermeiro(a) específica. Além disso,
+        é muito importante a presença de provas na hora da denúncia: vídeos, audios, fotos, ou relatos de alguém que tenha presenciado a situação.
+    </string>
+
 </resources>

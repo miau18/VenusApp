@@ -12,8 +12,7 @@ import com.example.vnus.ui.auth.usuaria.LoginUsuaria;
 
 public class SegundaTelaUsuaria extends AppCompatActivity {
 
-    private Button btnLogin;
-    private Button btnCadastro;
+    private Button btnLogin, btnCadastro;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,11 +25,13 @@ public class SegundaTelaUsuaria extends AppCompatActivity {
         btnLogin.setOnClickListener(v ->{
             Intent i = new Intent(SegundaTelaUsuaria.this, LoginUsuaria.class);
             startActivity(i);
+            finish();
         });
 
         btnCadastro.setOnClickListener(v ->{
             Intent i = new Intent(SegundaTelaUsuaria.this, CadastroUsuaria.class);
             startActivity(i);
+            finish();
         });
 
     }

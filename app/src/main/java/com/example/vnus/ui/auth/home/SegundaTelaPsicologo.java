@@ -1,18 +1,37 @@
 package com.example.vnus.ui.auth.home;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.vnus.R;
+import com.example.vnus.ui.auth.psicologo.CadastroPsicologo;
+import com.example.vnus.ui.auth.psicologo.LoginPsicologo;
 
 public class SegundaTelaPsicologo extends AppCompatActivity {
+
+    private Button btnLogin, btnCadastro;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.tela_inicial);
+        setContentView(R.layout.segunda_tela);
 
+        btnLogin = findViewById(R.id.buttonLogin);
+        btnCadastro = findViewById(R.id.buttonCadastro);
 
+        btnLogin.setOnClickListener(v -> {
+            Intent i = new Intent(SegundaTelaPsicologo.this, LoginPsicologo.class);
+            startActivity(i);
+            finish();
+        });
+
+        btnCadastro.setOnClickListener(v -> {
+            Intent i = new Intent(SegundaTelaPsicologo.this, CadastroPsicologo.class);
+            startActivity(i);
+            finish();
+        });
     }
 }

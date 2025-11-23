@@ -17,21 +17,50 @@
         android:orientation="vertical"
         android:padding="16dp">
 
-        <TextView
-            android:id="@+id/txtNomeUsuaria"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Nome/ Apelido Usuária"
-            android:textStyle="bold"
-            android:textSize="14sp"
-            android:textColor="#6b6670" />
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/txtNomeUsuaria"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Nome/Apelido Usuária"
+                android:textStyle="bold"
+                android:textSize="25sp"
+                android:textColor="#6b6670" />
+
+            <ImageView
+                android:id="@+id/btnMenuRelato"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/dots"
+                android:contentDescription="Menu do relato"
+                android:visibility="gone"
+                android:padding="4dp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/txtHospital"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hospital Santa Maria"
+            android:textSize="15sp"
+            android:textStyle="italic"
+            android:textColor="#7b6d8d"
+            android:layout_marginTop="4dp"
+            android:visibility="gone"/>
 
         <TextView
             android:id="@+id/txtRelato"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit..."
-            android:textSize="13sp"
+            android:textSize="20sp"
             android:layout_marginTop="6dp"
             android:lineSpacingExtra="2dp"
             android:textColor="#6b6670" />
@@ -41,9 +70,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="01/01/2025 12:00"
-            android:textSize="11sp"
+            android:textSize="15sp"
             android:textColor="#6b6670"
-            android:layout_marginTop="4dp"/>
+            android:layout_marginTop="4dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -58,7 +87,7 @@
                 android:layout_height="20dp"
                 android:src="@drawable/user"
                 android:contentDescription="Perfil"
-                android:layout_marginEnd="16dp"/>
+                android:layout_marginEnd="16dp" />
 
             <ImageView
                 android:id="@+id/iconLike"
@@ -66,7 +95,7 @@
                 android:layout_height="20dp"
                 android:src="@drawable/like"
                 android:contentDescription="Curtir"
-                android:layout_marginEnd="4dp"/>
+                android:layout_marginEnd="4dp" />
 
             <TextView
                 android:id="@+id/txtCurtidas"
@@ -75,31 +104,15 @@
                 android:text="0"
                 android:textSize="12sp"
                 android:textColor="#6b6670"
-                android:layout_marginEnd="16dp"/>
+                android:layout_marginEnd="16dp" />
 
             <ImageView
                 android:id="@+id/iconMensagem"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:src="@drawable/mensagem"
+                android:layout_marginEnd="10dp"
                 android:contentDescription="Comentar"
-                android:layout_marginEnd="4dp"/>
-
-            <TextView
-                android:id="@+id/txtComentarios"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="0"
-                android:textSize="12sp"
-                android:textColor="#6b6670"
-                android:layout_marginEnd="16dp"/>
-
-            <ImageView
-                android:id="@+id/iconSend"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:src="@drawable/send"
-                android:contentDescription="Compartilhar" />
+                android:src="@drawable/mensagem" />
         </LinearLayout>
     </LinearLayout>
 </androidx.cardview.widget.CardView>

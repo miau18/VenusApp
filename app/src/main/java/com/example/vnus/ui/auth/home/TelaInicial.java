@@ -10,24 +10,26 @@ import com.example.vnus.R;
 
 public class TelaInicial extends AppCompatActivity {
 
+    private Button btnUsuaria, btnPsicologo;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tela_inicial);
 
-        Button btnUsuaria = findViewById(R.id.buttonUsuaria);
-        Button btnPsicologo = findViewById(R.id.buttonPsicologo);
+        btnUsuaria = findViewById(R.id.buttonUsuaria);
+        btnPsicologo = findViewById(R.id.buttonPsicologo);
 
         btnUsuaria.setOnClickListener(v ->{
             Intent i = new Intent(TelaInicial.this, SegundaTelaUsuaria.class);
             startActivity(i);
+            finish();
         });
 
         btnPsicologo.setOnClickListener(v ->{
             Intent i = new Intent(TelaInicial.this, SegundaTelaPsicologo.class);
             startActivity(i);
+            finish();
         });
-
-
     }
 }

@@ -8,7 +8,6 @@
     android:background="#fef7ff"
     tools:context=".ui.auth.usuaria.CadastroUsuaria">
 
-    <!-- Logo -->
     <ImageView
         android:id="@+id/logo"
         android:layout_width="100dp"
@@ -72,8 +71,7 @@
                 android:layout_marginTop="12dp"
                 android:hint="Senha:"
                 android:background="@drawable/rounded_edittext"
-                android:padding="16dp"
-                android:inputType="textPassword" />
+                android:padding="16dp" />
         </LinearLayout>
 
         <LinearLayout

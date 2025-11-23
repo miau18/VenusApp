@@ -18,9 +18,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <LinearLayout
-        android:id="@+id/layoutNormalLogin"
-        android:orientation="vertical"
+    <FrameLayout
+        android:id="@+id/fieldsContainerLogin"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -30,92 +29,93 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <EditText
-            android:id="@+id/editTextEmail3"
+        <LinearLayout
+            android:id="@+id/layoutNormalLogin"
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:hint="Email:"
-            android:textColor="#6B6670"
-            android:textColorHint="#cac4d0"
-            android:background="@drawable/rounded_edittext"
-            android:padding="16dp"
-            android:inputType="textEmailAddress" />
+            android:layout_height="wrap_content">
 
-        <EditText
-            android:id="@+id/editTextSenha3"
+            <EditText
+                android:id="@+id/editTextEmail3"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:hint="Email:"
+                android:textColor="#6B6670"
+                android:textColorHint="#cac4d0"
+                android:background="@drawable/rounded_edittext"
+                android:padding="16dp"
+                android:inputType="textEmailAddress" />
+
+            <EditText
+                android:id="@+id/editTextSenha3"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="12dp"
+                android:hint="Senha:"
+                android:textColor="#6B6670"
+                android:textColorHint="#cac4d0"
+                android:background="@drawable/rounded_edittext"
+                android:padding="16dp"
+                android:inputType="textPassword"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layoutAnonimoLogin"
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:layout_marginTop="12dp"
-            android:hint="Senha:"
-            android:textColor="#6B6670"
-            android:textColorHint="#cac4d0"
-            android:background="@drawable/rounded_edittext"
-            android:padding="16dp"
-            android:inputType="textPassword"/>
-    </LinearLayout>
+            android:layout_height="wrap_content"
+            android:visibility="gone">
 
-    <LinearLayout
-        android:id="@+id/layoutAnonimoLogin"
-        android:orientation="vertical"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="32dp"
-        android:visibility="gone"
-        app:layout_constraintTop_toBottomOf="@id/logo"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+            <EditText
+                android:id="@+id/editTextCodinomeLogin"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:hint="Codinome:"
+                android:textColor="#6B6670"
+                android:textColorHint="#cac4d0"
+                android:background="@drawable/rounded_edittext"
+                android:padding="16dp"
+                android:inputType="textPersonName" />
 
-        <EditText
-            android:id="@+id/editTextCodinomeLogin"
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:hint="Codinome:"
-            android:textColor="#6B6670"
-            android:textColorHint="#cac4d0"
-            android:background="@drawable/rounded_edittext"
-            android:padding="16dp"
-            android:inputType="textPersonName" />
+            <EditText
+                android:id="@+id/editTextSenhaAnonimaLogin"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="12dp"
+                android:hint="Senha:"
+                android:textColor="#6B6670"
+                android:textColorHint="#cac4d0"
+                android:background="@drawable/rounded_edittext"
+                android:padding="16dp"
+                android:inputType="textPassword"/>
+        </LinearLayout>
 
-        <EditText
-            android:id="@+id/editTextSenhaAnonimaLogin"
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:layout_marginTop="12dp"
-            android:hint="Senha Anônima:"
-            android:textColor="#6B6670"
-            android:textColorHint="#cac4d0"
-            android:background="@drawable/rounded_edittext"
-            android:padding="16dp"
-            android:inputType="textPassword"/>
-    </LinearLayout>
+    </FrameLayout>
 
     <CheckBox
         android:id="@+id/checkAnonimo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Cadastrar como anônima"
+        android:text="Entrar como anônima"
         android:textColor="#6B6670"
-        app:layout_constraintTop_toBottomOf="@id/layoutNormalLogin"
+        app:layout_constraintTop_toBottomOf="@id/fieldsContainerLogin"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:ignore="NotSibling" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/btnLogin"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
-        android:layout_marginBottom="150dp"
         android:background="@drawable/rounded_button"
         android:textSize="18sp"
         android:text="Entrar"
         android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/checkAnonimo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

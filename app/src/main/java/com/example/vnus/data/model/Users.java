@@ -1,24 +1,21 @@
 package com.example.vnus.data.model;
 
-import org.checkerframework.checker.units.qual.C;
-
 import java.util.List;
 
 public class Users {
 
-    private String id;
-    private String email;
-    private String nome;
-    private String sobrenome;
-    private String tipoUser;
+    protected String id;
+    protected String email;
+    protected String nome;
+    protected String sobrenome;
+    protected String tipoUser;
 
     //Relações
-    private List<Relato> relatosCompartilhados;
-    private List<Users> relatosCurtidos;
-    private List<Comentario> comentariosFeitos;
-    private List<Mensagem> mensagensEnviadas;
-    private List<Mensagem> mensagensRecebidas;
-    private List<Chat> chatsQueParticipa;
+    protected List<Relato> relatosCompartilhados;
+    protected List<Users> relatosCurtidos;
+    protected List<Comentario> comentariosFeitos;
+    protected List<Mensagem> mensagensEnviadas;
+    protected List<Mensagem> mensagensRecebidas;
 
     public Users(){
     }
@@ -31,14 +28,12 @@ public class Users {
         this.tipoUser=tipoUser;
     }
 
-    public String getId() { return id; }
-
+    public String getId() { return this.id; }
     public void setId(String id) { this.id=id; }
     public String getNome() { return nome; }
     public void setNome(String nome) { this.nome=nome; }
     public String getSobrenome() { return sobrenome; }
     public void setSobrenome(String sobrenome) { this.sobrenome = sobrenome; }
-
     public String getEmail() { return email; }
     public void setEmail(String email) { this.email = email; }
     public String getTipoUser() { return tipoUser; }
